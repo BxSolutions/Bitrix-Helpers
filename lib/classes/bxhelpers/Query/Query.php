@@ -18,12 +18,13 @@ class Query extends AbstractQuery
 	 * Available classes
 	 */
 
-	const User = 'User';
+	const IBlock = 'IBlock';
 	const IBElement = 'IBlockElement';
 	const IBSection = 'IBlockSection';
-	const IBlock = 'IBlock';
-	const Orders = 'SaleOrder';
 	const Basket = 'SaleBasket';
+	const Order = 'SaleOrder';
+	const OrderPropsValue = 'SaleOrderPropsValue';
+	const User = 'User';
 
 	public function __construct($from = null)
 	{

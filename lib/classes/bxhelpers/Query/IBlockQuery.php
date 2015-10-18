@@ -37,10 +37,10 @@ class IBlockQuery extends AbstractQuery
 
 	/**
 	 * Run CIBlock::GetList(
-	  array arOrder = Array("SORT"=>"ASC"),
-	  array arFilter = Array(),
-	  bool bIncCnt = false
-	  );
+	 * array arOrder = Array("SORT"=>"ASC"),
+	 * array arFilter = Array(),
+	 * bool bIncCnt = false
+	 * );
 	 * https://dev.1c-bitrix.ru/api_help/iblock/classes/ciblock/getlist.php
 	 * 
 	 * @return CDBResult

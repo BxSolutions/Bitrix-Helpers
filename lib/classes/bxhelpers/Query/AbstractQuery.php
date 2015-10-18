@@ -260,23 +260,43 @@ class AbstractQuery implements QueryInterface
 
 	/**
 	 * Inserts row.
+	 * 
+	 * @global type $APPLICATION
+	 * @throws BxHelpers\Exception
 	 * @param array $arFields
 	 * @return int|false
 	 */
 	public function add(array $arFields)
 	{
-		return $this->dataProvider->add($arFields);
+		global $APPLICATION;
+
+		$res = $this->dataProvider->add($arFields);
+
+		if ($res === false) {
+
+			$exception = $APPLICATION->GetException();
+
+			if ($exception !== false && method_exists($exception, 'getString')) {
+
+				throw New Exception($exception->getString());
+			} elseif (($lastError = $this->getLastError()) != '') {
+				throw New Exception($lastError);
+			}
+		}
+		return $res;
 	}
 
 	/**
 	 * Alias for the "add" method.
 	 * 
+	 * @throws BxHelpers\Exception
 	 * @param array $arFields
 	 * @return int|false
 	 */
 	public function insert(array $arFields)
 	{
-		return $this->add($arFields);
+
+		$res = $this->add($arFields);
 	}
 
 	/**
@@ -294,12 +314,29 @@ class AbstractQuery implements QueryInterface
 	/**
 	 * Deletes row.
 	 * 
+	 * @global type $APPLICATION
 	 * @param int $id
 	 * @return boolean
+	 * @throws BxHelpers\Exception
 	 */
 	public function delete($id)
 	{
-		return $this->dataProvider->delete($id);
+		global $APPLICATION;
+
+		$res = $this->dataProvider->delete($id);
+
+		if ($res === false) {
+
+			$exception = $APPLICATION->GetException();
+
+			if ($exception !== false && method_exists($exception, 'getString')) {
+
+				throw New Exception($exception->getString());
+			} elseif (($lastError = $this->getLastError()) != '') {
+				throw New Exception($lastError);
+			}
+		}
+		return $res;
 	}
 
 	/**

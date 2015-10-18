@@ -19,12 +19,12 @@ class IBlockElementQuery extends AbstractQuery
 
 	/**
 	 * Run CIBlockElement::GetList(
-	  array arOrder = Array("SORT"=>"ASC"),
-	  array arFilter = Array(),
-	  mixed arGroupBy = false,
-	  mixed arNavStartParams = false,
-	  array arSelectFields = Array()
-	  );
+	 * array arOrder = Array("SORT"=>"ASC"),
+	 * array arFilter = Array(),
+	 * mixed arGroupBy = false,
+	 * mixed arNavStartParams = false,
+	 * array arSelectFields = Array()
+	 * );
 	 * https://dev.1c-bitrix.ru/api_help/iblock/classes/ciblockelement/getlist.php
 	 * 
 	 * @return CDBResult
@@ -32,7 +32,7 @@ class IBlockElementQuery extends AbstractQuery
 	protected function getList()
 	{
 		$limit = $this->getLimit();
-		
+
 		if ($limit > 0) {
 			$arNavStartParams = array('nTopCount' => $limit);
 		} else {

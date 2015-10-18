@@ -25,18 +25,18 @@ class UserQuery extends AbstractQuery
 
 	/**
 	 * Run CDBResult CUser::GetList(
-	  mixed &by = "timestamp_x",
-	  string &order = "desc",
-	  array filter = array(),
-	  array arParams=array()
-	  )
+	 * mixed &by = "timestamp_x",
+	 * string &order = "desc",
+	 * array filter = array(),
+	 * array arParams=array()
+	 * )
 	 * https://dev.1c-bitrix.ru/api_help/main/reference/cuser/getlist.php
 	 * 
 	 * @return CDBResult
 	 */
 	protected function getList()
 	{
-		
+
 		$arParams = array();
 
 		$select = $this->getSelect();
