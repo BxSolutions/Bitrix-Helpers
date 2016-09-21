@@ -17,8 +17,7 @@ BxHelpers\Query\ - набор классов с единым синтаксис�
  ```
 
 3. Подключить необходимый класс, например:
-```php
-use BxHelpers\Basket;
-
-echo Basket::getUserBasketProductsCost();
-```
+ ```php
+ use BxHelpers\Basket;
+ echo Basket::getUserBasketProductsCost();
+ ```
